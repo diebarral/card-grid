@@ -5,25 +5,23 @@ import { fetchPosts } from "../../api/posts";
 
 // Store
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { selectPosts } from "../../app/slices/postsSlice";
-import { update } from "../../app/slices/postsSlice";
+import { selectPosts, update } from "../../app/slices/postsSlice";
+import { selectIsLoading, toggle } from "../../app/slices/contextSlice";
 
 const CardGrid = () => {
   const posts = useAppSelector(selectPosts);
+  const isLoading = useAppSelector(selectIsLoading);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(toggle(true))
     fetchPosts().then(res => {
       dispatch(update(res));
-    });
+    }).finally(() => dispatch(toggle(false)));
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('Use Effect', posts);
-  }, [posts])
-
   return(
-    <div>hey</div>
+    <div>{isLoading ? <span>is loading</span> : <div>not loading</div>}</div>
   );
 };
 
