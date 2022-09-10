@@ -1,3 +1,16 @@
+# Diego's notes
+
+* I used CRA with the Typescript template to start.
+* I didn't use any design system, I just added Material UI for the pagination component.
+* It took me around 3 hours or so. What took longer was setting up the store since it's been a while since the last time I used redux, and I used to use an old version that didn't have the slices, so getting familiar with it took a few minutes.
+* For the pagination I started using react-paginate but I ran into issues with it and the UI part was not out of the box, so I changed to Material UI pagination. 
+* I used axios to make the request to the api. 
+* The page size is a constant under the `/utils` folder.
+* I tried to keep commits tidy so you can follow what I did in the history. 
+
+Not much more to add, for any further questions don't hesitate to send me an email. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
