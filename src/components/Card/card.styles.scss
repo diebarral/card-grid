@@ -1,0 +1,19 @@
+  .card-container {
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  max-width: 100%;
+  overflow: hidden;
+
+  .title, .body {
+    padding: 2rem;
+  }
+
+  .title {
+    border-bottom: 2px solid #ececec;
+  }
+
+  .body { flex: 1 }
+}
