@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { MagnifyingGlass } from  'react-loader-spinner'
 
 // Api
 import { fetchPosts } from "../../api/posts";
@@ -21,7 +22,22 @@ const CardGrid = () => {
   }, [dispatch]);
 
   return(
-    <div>{isLoading ? <span>is loading</span> : <div>not loading</div>}</div>
+    <div>
+      {isLoading ? (
+        <MagnifyingGlass 
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="MagnifyingGlass-loading"
+          wrapperStyle={{}}
+          wrapperClass="MagnifyingGlass-wrapper"
+          glassColor = '#c0efff'
+          color = '#e15b64'
+        />
+      ) : (
+        <div>not loading</div>
+      )}
+    </div>
   );
 };
 
